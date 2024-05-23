@@ -29,6 +29,12 @@ export const setupServer = () => {
     }),
   );
 
+  app.get('/', (req, res) => {
+    res.json({
+      message: 'Contact App is Running',
+    });
+  });
+
   app.use(contactsRouter);
 
   app.use('*', notFoundHandler);
