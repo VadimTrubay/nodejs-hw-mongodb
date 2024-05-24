@@ -7,16 +7,19 @@ import {
 import createHttpError from 'http-errors';
 import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 import { parseSortParams } from '../utils/parseSortParams.js';
+import { parseFilterParams } from '../utils/parseFilterParams.js';
 
 export const getContactsController = async (req, res) => {
   const { page, perPage } = parsePaginationParams(req.query);
-  const { sortBy, sortOrder } = parseSortParams(req.query)
+  const { sortBy, sortOrder } = parseSortParams(req.query);
+  const filter = parseFilterParams(req.query);
 
   const contacts = await getAllContacts({
     page,
     perPage,
     sortBy,
     sortOrder,
+    filter,
   });
 
   res.json({
@@ -68,7 +71,7 @@ export const upsertContactController = async (req, res, next) => {
     message: `Successfully upserted a contact!`,
     data: updatedContact.contact,
   });
-}
+};
 
 export const patchContactController = async (req, res, next) => {
   const { contactId } = req.params;
