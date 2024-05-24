@@ -8,6 +8,7 @@ const parseType = (type) => {
 
 const parseIsFavourite = (isFavourite) => {
   const isBoolean = typeof isFavourite === 'boolean';
+  console.log(isBoolean, typeof isBoolean)
   if (!isBoolean) return;
 
   return isBoolean;
