@@ -23,13 +23,13 @@ export const setupServer = () => {
 
   app.use(cookieParser());
   app.use(cors());
-  // app.use(
-  //   pino({
-  //     transport: {
-  //       target: 'pino-pretty',
-  //     },
-  //   }),
-  // );
+  app.use(
+    pino({
+      transport: {
+        target: 'pino-pretty',
+      },
+    }),
+  );
 
   app.get('/', (req, res) => {
     res.json({
