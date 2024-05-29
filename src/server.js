@@ -21,6 +21,7 @@ export const setupServer = () => {
     }),
   );
 
+  app.use(cookieParser());
   app.use(cors());
   // app.use(
   //   pino({
@@ -29,6 +30,7 @@ export const setupServer = () => {
   //     },
   //   }),
   // );
+
   app.get('/', (req, res) => {
     res.json({
       message: 'Contact App is Running',
@@ -38,9 +40,7 @@ export const setupServer = () => {
   app.use(router);
 
   app.use('*', notFoundHandler);
-
   app.use(errorHandler);
-  app.use(cookieParser());
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
