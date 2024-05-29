@@ -5,7 +5,7 @@ import cors from 'cors';
 import pino from 'pino-http';
 import { errorHandler } from './middleware/errorHandler.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
-import router from './routers/index.js'
+import router from './routers/index.js';
 import cookieParser from 'cookie-parser';
 
 

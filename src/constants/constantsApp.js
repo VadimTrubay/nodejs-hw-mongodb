@@ -1,5 +1,5 @@
 export const ENV_VARS = {
-  PORT: 'PORT'
+  PORT: 'PORT',
 };
 
 export const SORT_ORDER = {
