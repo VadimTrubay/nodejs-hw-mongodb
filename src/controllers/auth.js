@@ -1,5 +1,6 @@
 import { loginUser, logoutUser, refreshUsersSession, registerUser } from '../services/auth.js';
 import { THIRTY_DAYS } from '../constants/constantsApp.js';
+import createHttpError from 'http-errors';
 
 export const registerUserController = async (req, res) => {
   const user = await registerUser(req.body);
@@ -32,7 +33,10 @@ export const loginUserController = async (req, res) => {
 };
 
 export const logoutUserController = async (req, res) => {
-    console.log(req.cookies.sessionId)
+  // console.log(req.cookies.sessionId)
+  if (!req.cookies.sessionId) {
+  throw createHttpError(404, 'User not found');
+  }
   if (req.cookies.sessionId) {
     await logoutUser(req.cookies.sessionId);
   }
