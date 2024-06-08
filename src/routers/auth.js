@@ -48,7 +48,6 @@ router.post(
   validateBody(resetPasswordSchema),
   ctrlWrapper(resetPasswordController),
 );
-resetPasswordController;
 
 router.post('/logout', authenticate, ctrlWrapper(logoutUserController));
 
