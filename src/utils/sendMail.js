@@ -11,10 +11,10 @@ const transporter = nodemailer.createTransport({
     user: env(SMTP.SMTP_USER),
     pass: env(SMTP.SMTP_PASSWORD),
   },
-      tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: false
-      }
+      // tls: {
+      //   // do not fail on invalid certs
+      //   rejectUnauthorized: false
+      // }
 });
 
 export const sendEmail = async (options) => {

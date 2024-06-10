@@ -130,6 +130,7 @@ export const sendResetToken = async (email) => {
       subject: 'Reset your password',
       html,
     });
+    console.log('Send email success')
   } catch (err) {
     throw createHttpError(
       500,
