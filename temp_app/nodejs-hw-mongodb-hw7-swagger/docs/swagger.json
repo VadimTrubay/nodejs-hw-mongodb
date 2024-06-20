@@ -7,7 +7,7 @@
       "name": "Apache 2.0",
       "url": "<http://www.apache.org/licenses/LICENSE-2.0.html>"
     },
-    "description": "API for Contacts"
+    "description": "API для керування контактами користувачів\n"
   },
   "servers": [
     {
@@ -300,7 +300,7 @@
                   "email": {
                     "type": "string",
                     "description": "User email",
-                    "example": "dad@me.com"
+                    "example": "bob@me.com"
                   }
                 }
               }
