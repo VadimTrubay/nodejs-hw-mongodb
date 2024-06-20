@@ -2,12 +2,12 @@
   "openapi": "3.1.0",
   "info": {
     "version": "1.0.0",
-    "title": "Contacts API",
+    "title": "Contacts app",
     "license": {
       "name": "Apache 2.0",
       "url": "<http://www.apache.org/licenses/LICENSE-2.0.html>"
     },
-    "description": "API for Contacts"
+    "description": "This is a documentation of contacts app\n"
   },
   "servers": [
     {
@@ -52,7 +52,7 @@
                   "name": {
                     "description": "User name",
                     "type": "string",
-                    "example": "Robert Pattison"
+                    "example": "Vad Trub"
                   },
                   "email": {
                     "description": "User's email",
@@ -62,7 +62,7 @@
                   "password": {
                     "description": "Password",
                     "type": "string",
-                    "example": "immortal"
+                    "example": 1234
                   }
                 }
               }
@@ -90,7 +90,7 @@
                         "name": {
                           "description": "New user name",
                           "type": "string",
-                          "example": "Robert Pattison"
+                          "example": "Vad Trub"
                         },
                         "email": {
                           "description": "New user email",
@@ -121,6 +121,34 @@
           },
           "400": {
             "$ref": "#/components/responses/400"
+          },
+          "409": {
+            "description": "User is already registered!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 409
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "ConflictError"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "example": "Conflict. User is already registered!"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -151,12 +179,12 @@
                   "email": {
                     "description": "User's email",
                     "type": "string",
-                    "example": "alcrane@outlook.com"
+                    "example": "vadnet@ex.com"
                   },
                   "password": {
                     "description": "Password",
                     "type": "string",
-                    "example": "karp"
+                    "example": 1234
                   }
                 }
               }
@@ -300,7 +328,7 @@
                   "email": {
                     "type": "string",
                     "description": "User email",
-                    "example": "dad@me.com"
+                    "example": "bob@me.com"
                   }
                 }
               }
@@ -558,7 +586,7 @@
                   "value": {
                     "name": "Mel Gibson",
                     "phoneNumber": "+380123456789",
-                    "email": "MEEELLL@ui.com",
+                    "email": "vadnet@ex.com",
                     "isFavourite": true,
                     "contactType": "work",
                     "photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVF..."
