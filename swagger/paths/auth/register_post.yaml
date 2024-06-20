@@ -18,7 +18,7 @@ requestBody:
           name:
             description: User name
             type: string
-            example: Robert Pattison
+            example: Vad Trub
           email:
             description: User's email
             type: string
@@ -26,7 +26,7 @@ requestBody:
           password:
             description: Password
             type: string
-            example: immortal
+            example: 1234
 responses:
   '201':
     description: Successfully registered a user!
@@ -46,7 +46,7 @@ responses:
                 name:
                   description: New user name
                   type: string
-                  example: Robert Pattison
+                  example: Vad Trub
                 email:
                   description: New user email
                   type: string
