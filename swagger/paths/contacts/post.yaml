@@ -46,7 +46,7 @@ requestBody:
           value:
             name: Mel Gibson
             phoneNumber: '+380123456789'
-            email: MEEELLL@ui.com
+            email: vadnet@ex.com
             isFavourite: true
             contactType: work
             photo: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVF...'
